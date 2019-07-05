@@ -25,11 +25,11 @@ def callback():
     #sendText(user,userText)
     if(userText == 'ดีคร้าบ') :
            sendText(user,'555ดีคร้าบ')
-     elif (usertext == 'ชื่ออะไร') :
+    elif (usertext == 'ชื่ออะไร') :
            sendText(user,'ตู่ครับ')
-     elif (usertext == 'คุกนะมึง') :
+    elif (usertext == 'คุกนะมึง') :
            sendText(user,'อยู่ในคุกอยู่เเล้ว') :
-   return '',200
+    return '',200
 def sendText(user, text):
   LINE_API = 'https://api.line.me/v2/bot/message/reply'
   headers = {
