@@ -24,12 +24,12 @@ def callback():
     userText = decoded["events"][0]['message']['text']
     sendText(user,userText)
        if (usertext == 'สวัสดีคร้าบ') :
-        sendText(user,'555ดีคร้าบ')
+ #       sendText(user,'555ดีคร้าบ')
     elif (usertext == 'ชื่ออะไร') :
-        sendText(user,'ตู่ครับ')
+ #       sendText(user,'ตู่ครับ')
     elif (usertext == 'คุกนะมึง') :
-        sendText(user,'อยู่ในคุกอยู่เเล้ว
-
+ #       sendText(user,'อยู่ในคุกอยู่เเล้ว
+   
 def sendText(user, text):
   LINE_API = 'https://api.line.me/v2/bot/message/reply'
   headers = {
