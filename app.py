@@ -23,12 +23,13 @@ def callback():
     user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
     userText = decoded['queryResult']['intent']['displayName']
     #sendText(user,userText)
-    if (userText == 'ดีคร้าบ') :
-        sendText(user,'555ดีคร้าบ')
-    elif (userText == 'ชื่ออะไร') :
-        sendText(user,'ตู่ครับ')
-    elif (userText == 'คุกนะมึง') :
-        sendText(user,'อยู่ในคุกอยู่เเล้ว')
+    obji=open("file.txt","r")
+    
+    for line in obji.readlines():
+        if number in name:
+           print(line)
+    
+    obji.close()
     return '',200
 def sendText(user, text):
   LINE_API = 'https://api.line.me/v2/bot/message/reply'
