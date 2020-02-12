@@ -23,7 +23,7 @@ def callback():
     user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
     userText = decoded['queryResult']['intent']['displayName']
     #sendText(user,userText)
-    obji=open("file.txt","r")
+    obji=open("รายชื่อนักเรียน","w")
     
     for line in obji.readlines():
         if number in name:
