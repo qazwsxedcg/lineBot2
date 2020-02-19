@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     a=os.environ['Authorization']
-    obji=open("studentlist.txt","r")
+    obji=open("https://raw.githubusercontent.com/qazwsxedcg/lineBot2/master/studentlist.txt","r")
     b= obji.readline()
     obji.close()
     return "aa"
