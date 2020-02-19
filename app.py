@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 import os
 import json
 import requests
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -9,7 +10,11 @@ app = Flask(__name__)
 def index():
     a=os.environ['Authorization']
     obji=open("https://raw.githubusercontent.com/qazwsxedcg/lineBot2/master/studentlist.txt","r")
-    b= obji.readline()
+    url = "https://raw.githubusercontent.com/qazwsxedcg/lineBot2/master/studentlist.txt"
+#    b= obji.readline()
+    df = pd.read_csv(url,sep=",")
+
+    df.head()
     obji.close()
     return "aa"
 
