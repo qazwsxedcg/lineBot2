@@ -8,10 +8,11 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     a=os.environ['Authorization']
-#    obji=open("https://raw.githubusercontent.com/qazwsxedcg/lineBot2/master/studentlist.txt","r")
-#    b = obji.readline()
-#    obji.close()
-    return "dksk"
+with open("studentlist.txt") as f:
+    lis = [line.split() for line in f]        # create a list of lists
+    for i, x in enumerate(lis):              #print the list items 
+        return "line{0} = {1}".format(i, x) 
+ return "dksk"
 
 @app.route("/webhook", methods=['POST'])
 def webhook():
