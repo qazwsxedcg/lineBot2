@@ -36,13 +36,14 @@ def callback():
 #        sendText(user,obji.readline())
 #sendText(user,obji.readline())
     
-with open("studentlist.txt") as f:
-    lis = [line.split() for line in f]        # create a list of lists
-    for i, x in enumerate(lis):              #print the list items 
-        sendText(user,"line{0} = {1}".format(i, x))
+    with open("studentlist.txt") as f:
+        lis = [line.split() for line in f]        # create a list of lists
+        for i, x in enumerate(lis):              #print the list items 
+            sendText(user,"line{0} = {1}".format(i, x))
         
     obji.close()
     return '',200
+
 def sendText(user, text):
   LINE_API = 'https://api.line.me/v2/bot/message/reply'
   headers = {
