@@ -27,7 +27,7 @@ def callback():
  #   sendText(user,"ddd")
 #    for line in obji.readlines():
 #        if number in name:
-        sendText(user,obji.readline())
+        sendText(user,obji.read())
     
     obji.close()
     return '',200
