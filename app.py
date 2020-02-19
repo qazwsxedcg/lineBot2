@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
     a=os.environ['Authorization']
     obji=open("studentlist.txt","r")
-    b= obji.readline()
+#    b= obji.readline()
     obji.close()
     return "a"
 
