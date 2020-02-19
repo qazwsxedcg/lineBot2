@@ -11,7 +11,7 @@ def index():
     obji=open("studentlist.txt","r")
     b= obji.readline()
     obji.close()
-    return "dksk"
+    return b
 
 @app.route("/webhook", methods=['POST'])
 def webhook():
