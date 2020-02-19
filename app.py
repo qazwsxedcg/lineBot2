@@ -24,10 +24,10 @@ def callback():
     userText = decoded['queryResult']['intent']['displayName']
     #sendText(user,userText)
     obji=open("studentlist.txt","r")
-    sendText(user,"ddd")
-    for line in obji.readlines():
+ #   sendText(user,"ddd")
+#    for line in obji.readlines():
 #        if number in name:
-        sendText(user,line)
+        sendText(user,obji.readline())
     
     obji.close()
     return '',200
