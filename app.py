@@ -26,7 +26,8 @@ def callback():
     user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
     userText = decoded['queryResult']['intent']['displayName']
     #sendText(user,userText)
-    obji=open("https://raw.githubusercontent.com/qazwsxedcg/lineBot2/master/studentlist.txt","r")
+#    obji=open("https://raw.githubusercontent.com/qazwsxedcg/lineBot2/master/studentlist.txt","r")
+    obji=open("studentlist.txt","r")
     sendText(user,"ddd")
 #    for line in obji.readlines():
 #        if number in name:
