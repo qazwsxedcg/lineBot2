@@ -8,10 +8,10 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     a=os.environ['Authorization']
-    obji=open("https://raw.githubusercontent.com/qazwsxedcg/lineBot2/master/studentlist.txt","r")
-    b = obji.readline()
-    obji.close()
-    return b
+#    obji=open("https://raw.githubusercontent.com/qazwsxedcg/lineBot2/master/studentlist.txt","r")
+#    b = obji.readline()
+#    obji.close()
+    return "dksk"
 
 @app.route("/webhook", methods=['POST'])
 def webhook():
