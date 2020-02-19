@@ -27,14 +27,19 @@ def callback():
     userText = decoded['queryResult']['intent']['displayName']
     #sendText(user,userText)
 #    obji=open("https://raw.githubusercontent.com/qazwsxedcg/lineBot2/master/studentlist.txt","r")
-    obji=open("studentlist.txt","r")
-    b = obji.read()
-    sendText(user,"ddd")
+#    obji=open("studentlist.txt","r")
+#    b = obji.read()
+#    sendText(user,"ddd")
 #    for line in obji.readlines():
 #        if number in name:
 #        sendText(user,obji.readline())
 #sendText(user,obji.readline())
     
+with open("studentlist.txt") as f:
+    lis = [line.split() for line in f]        # create a list of lists
+    for i, x in enumerate(lis):              #print the list items 
+        sendText(user,"line{0} = {1}".format(i, x))
+        
     obji.close()
     return '',200
 def sendText(user, text):
