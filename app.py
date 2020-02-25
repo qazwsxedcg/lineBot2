@@ -2,21 +2,24 @@ from flask import Flask, jsonify, request
 import os
 import json
 import requests
-#import pandas as pd
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
     a=os.environ['Authorization']
-    obji=open("https://raw.githubusercontent.com/qazwsxedcg/lineBot2/master/studentlist.txt","r")
-#    url = "https://raw.githubusercontent.com/qazwsxedcg/lineBot2/master/studentlist.txt"
-#    b= obji.readline()
-#    df = pd.read_csv(url,sep=",")
-
-#    df.head()
-    obji.close()
-    return "aa"
+    try:
+        f = open("student.csv", "r")
+        for line in f.readlines():
+#            print(line)
+            a = line.split(",")
+            if(a[0]=="21007"):
+                return a[4]
+        f.close()
+    except Exception:
+        return "Could not read to file"
+    
+    return "นายอาคม สุวรรณประเสริฐ เลขที่ 0 ชั้น ม.4/"
 
 @app.route("/webhook", methods=['POST'])
 def webhook():
@@ -28,24 +31,26 @@ def callback():
     json_line = request.get_json()
     json_line = json.dumps(json_line)
     decoded = json.loads(json_line)
+#    user = decoded["events"][0]['replyToken']
+#    userText = decoded["events"][0]['message']['text']
     user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
     userText = decoded['queryResult']['intent']['displayName']
-    #sendText(user,userText)
-#    obji=open("https://raw.githubusercontent.com/qazwsxedcg/lineBot2/master/studentlist.txt","r")
-#    obji=open("studentlist.txt","r")
-#    b = obji.read()
-#    sendText(user,"ddd")
-#    for line in obji.readlines():
-#        if number in name:
-#        sendText(user,obji.readline())
-#sendText(user,obji.readline())
-    
-    with open("studentlist.txt") as f:
-        lis = [line.split() for line in f]        # create a list of lists
-        for i, x in enumerate(lis):              #print the list items 
-            sendText(user,"line{0} = {1}".format(i, x))
-        
-    obji.close()
+    userAction = decoded['queryResult']['parameters']['studentId']
+    if(userText=="ถามชื่อ"):
+        try:
+            f = open("student.csv", "r")
+            for line in f.readlines():
+                a = line.split(",")
+                if(userAction==a[0]):
+#                   nameList=nameList+", "+a[4]
+                    sendText(user,a[4])
+            f.close()
+#           sendText(user,nameList)
+        except Exception:
+            sendText(user,"ขออภัย..ไม่สามารถเปิดไฟล์ได้")
+    elif(userText=="ไอ้บ้า"):
+        sendText(user,"ไม่บ้านะ")
+
     return '',200
 
 def sendText(user, text):
