@@ -37,7 +37,7 @@ def callback():
     userText = decoded['queryResult']['intent']['displayName']
     userAction = decoded['queryResult']['parameters']['studentId']
     #if(userText=="ถามชื่อ"):
-    sendText(user, userAction)
+#    sendText(user, userAction)
     try:
         f = open("student.csv", "r")
         for line in f.readlines():
