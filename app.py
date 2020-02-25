@@ -8,16 +8,16 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     a=os.environ['Authorization']
-    try:
-        f = open("student.csv", "r")
+#    try:
+#        f = open("student.csv", "r")
 #        for line in f.readlines():
 #            print(line)
 #            a = line.split(",")
 #            if(a[0]=="21007"):
 #                return a[4]
 #        f.close()
-    except Exception:
-        return "Could not read to file"
+#    except Exception:
+#        return "Could not read to file"
     
     return "นายอาคม สุวรรณประเสริฐ เลขที่ 0 ชั้น ม.4/"
 
