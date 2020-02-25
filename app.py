@@ -36,7 +36,8 @@ def callback():
     user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
     userText = decoded['queryResult']['intent']['displayName']
     userAction = decoded['queryResult']['parameters']['studentId']
-#    if(userText=="ถามชื่อ"):
+    #if(userText=="ถามชื่อ"):
+    sendText(user, userAction)
     try:
         f = open("student.csv", "r")
         for line in f.readlines():
