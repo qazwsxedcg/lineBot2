@@ -48,13 +48,13 @@ def callback():
         except Exception:
             sendText(user,"ขออภัย..ไม่สามารถเปิดไฟล์ได้")
             if(userText=="อยากรู้เลขประจำตัว"):
-        try:
-            f = open("student.csv", "r")
-            for line in f.readlines():
-                a = line.split(",")
-                if(userAction==a[2]):
-                    sendText(user,a[0])
-            f.close()
+       try:
+           f = open("student.csv", "r")
+           for line in f.readlines():
+               a = line.split(",")
+               if(userAction==a[2]):
+                   sendText(user,a[0])
+           f.close()
         except Exception:
             sendText(user,"ขออภัย..ไม่สามารถเปิดไฟล์ได้")
 #    sendText(user,"ds")
