@@ -13,7 +13,7 @@ def index():
         for line in f.readlines():
 #            print(line)
             a = line.split(",")
-            if(a[0]=="กษิวัฒน์"):
+            if(a[2]=="กษิวัฒน์"):
                 return a[4]
         f.close()
     except Exception:
