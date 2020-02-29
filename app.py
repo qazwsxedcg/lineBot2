@@ -46,7 +46,7 @@ def callback():
         except Exception:
             sendText(user,"ขออภัย..ไม่สามารถเปิดไฟล์ได้")
         f.close()
-#     sendText(user,"ds")
+     sendText(user,"ds")
     return '',200
 
 def sendText(user, text):
