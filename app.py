@@ -36,7 +36,6 @@ def callback():
     user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
     userText = decoded['queryResult']['intent']['displayName']
     userAction = decoded['queryResult']['parameters']['studentId']
-    userAction2 = decoded['queryResult']['parameters']['ssnumber']
     if(userText=="ถามชื่อ"):
         try:
             f = open("student.csv", "r")
