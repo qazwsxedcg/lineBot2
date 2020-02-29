@@ -46,11 +46,11 @@ def callback():
             a = line.split(",")
             if(userAction==a[0]):
                 sendText(user,a[4])
-    if(userText=="เลขประจำตัว"):
-        for line in f.readlines():
-            a = line.split(",")
-            if(userAction2==a[2]):
-                 sendText(user,a[0])
+#   if(userText=="เลขประจำตัว"):
+#        for line in f.readlines():
+#            a = line.split(",")
+#            if(userAction2==a[2]):
+#                 sendText(user,a[0])
     f.close()
 #     sendText(user,"ds")
     return '',200
