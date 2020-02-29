@@ -52,7 +52,7 @@ def callback():
             f = open("student.csv", "r")
             for line in f.readlines():
                 a = line.split(",")
-                if(userAction2==a[2]):
+                if(userAction2==a[4]):
                     sendText(user,a[0])
             f.close()
         except Exception:
